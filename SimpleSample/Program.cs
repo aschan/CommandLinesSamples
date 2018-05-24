@@ -10,17 +10,21 @@
         internal static void Main(string[] args)
         {
             #region  Using default parser with separate mapping/processing of result
+
             //var result = Parser.Default.ParseArguments<SimpleValues>(args);
             //if (result.Tag == ParserResultType.Parsed)
             //{
             //    result.MapResult(ProcessSimplevalues, ProcessErrors);
             //}
+
             #endregion
 
             #region Using default parser with immediate mapping/processing
-            //var result = Parser.Default.ParseArguments<SimpleValues>(args)
+
+            //Parser.Default.ParseArguments<SimpleValues>(args)
             //    .WithParsed(o => ProcessSimplevalues(o))
             //    .WithNotParsed(e => ProcessErrors(e));
+
             #endregion
         }
 
