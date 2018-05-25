@@ -6,7 +6,7 @@
         {
             ////new ValuesSampleCommand().Parse(args);
             ////new NamedOptionsCommand().Parse(args);
-            new VerbsCommand().Parse(args);
+            ////new VerbsCommand().Parse(args);
         }
     }
 }

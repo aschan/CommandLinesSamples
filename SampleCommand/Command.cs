@@ -10,18 +10,22 @@
     {
         internal abstract void Parse(string[] args);
 
-        protected bool ProcessErrors(IEnumerable<Error> errors)
+        protected void ProcessErrors(IEnumerable<Error> errors)
         {
             var foregroundColor = Console.ForegroundColor;
-            Console.ForegroundColor = ConsoleColor.Red;
-            foreach (var error in errors)
+            try
             {
-                var nameInfo = (NameInfo)error.GetType().GetProperties()?.FirstOrDefault(p => p.PropertyType == typeof(NameInfo))?.GetValue(error);
-                Console.WriteLine($"ERROR: {error.Tag} {nameInfo?.NameText}");
+                Console.ForegroundColor = ConsoleColor.Red;
+                foreach (var error in errors)
+                {
+                    var nameInfo = (NameInfo)error.GetType().GetProperties()?.FirstOrDefault(p => p.PropertyType == typeof(NameInfo))?.GetValue(error);
+                    Console.WriteLine($"ERROR: {error.Tag} {nameInfo?.NameText}");
+                }
             }
-
-            Console.ForegroundColor = foregroundColor;
-            return false;
+            finally
+            {
+                Console.ForegroundColor = foregroundColor;
+            }
         }
     }
 }
