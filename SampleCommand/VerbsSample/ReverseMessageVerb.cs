@@ -1,8 +1,9 @@
-﻿namespace SampleCommand
+﻿namespace SampleCommand.VerbsSample
 {
     using CommandLine;
 
-    internal class NamedOptions
+    [Verb("reverse", HelpText = "Reverses the message and shows the result.")]
+    internal class ReverseMessageVerb
     {
         [Option('r', "repetitions", Required = true, HelpText = "Number of times the messages should be repeated.")]
         public int Repetitions { get; set; }

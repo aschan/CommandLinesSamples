@@ -1,4 +1,4 @@
-﻿namespace SampleCommand
+﻿namespace SampleCommand.ValuesSample
 {
     using CommandLine;
 

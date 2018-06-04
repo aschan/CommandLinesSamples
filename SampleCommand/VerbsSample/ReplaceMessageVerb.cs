@@ -1,4 +1,4 @@
-﻿namespace SampleCommand
+﻿namespace SampleCommand.VerbsSample
 {
     using System.Collections.Generic;
 
@@ -17,7 +17,7 @@
         [Option('o', "old", Required = true, HelpText = "The text to find and replace.")]
         public string Old { get; set; }
 
-        [Option('n', "new",HelpText = "The text new text to insert.")]
+        [Option('n', "new", HelpText = "The text new text to insert.")]
         public string New { get; set; }
 
         [Usage(ApplicationAlias = "SampleCommand")]
@@ -25,8 +25,22 @@
         {
             get
             {
-                yield return new Example("Normal usage", new ReplaceMessageVerb { Repetitions = 3, Message = "Replace old with new", Old = "old", New = "new" });
-                yield return new Example("Other usage", new ReplaceMessageVerb { Repetitions = 3, Message = "Replace old with nothing", Old = "old", New = null });
+                yield return new Example("Normal usage",
+                    new ReplaceMessageVerb
+                    {
+                        Repetitions = 3,
+                        Message = "Replace old with new",
+                        Old = "old",
+                        New = "new"
+                    });
+                yield return new Example("Other usage",
+                    new ReplaceMessageVerb
+                    {
+                        Repetitions = 3,
+                        Message = "Replace old with nothing",
+                        Old = "old",
+                        New = null
+                    });
             }
         }
     }

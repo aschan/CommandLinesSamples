@@ -1,7 +1,6 @@
-﻿namespace SampleCommand
+﻿namespace SampleCommand.ValuesSample
 {
     using System;
-
     using CommandLine;
 
     internal class ValuesSampleCommand : Command
