@@ -1,4 +1,4 @@
-﻿namespace SampleCommand
+﻿namespace SampleCommand.VerbsSample
 {
     using System;
     using System.Linq;

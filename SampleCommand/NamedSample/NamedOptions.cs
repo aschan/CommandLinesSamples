@@ -1,9 +1,8 @@
-﻿namespace SampleCommand
+﻿namespace SampleCommand.NamedSample
 {
     using CommandLine;
 
-    [Verb("show", HelpText = "Shows the message.")]
-    internal class ShowMessageVerb
+    internal class NamedOptions
     {
         [Option('r', "repetitions", Required = true, HelpText = "Number of times the messages should be repeated.")]
         public int Repetitions { get; set; }
